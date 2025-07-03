@@ -4,6 +4,8 @@ theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
+# favicon, can be a local file path or URL
+favicon: '/favicons/favicon-32x32.png'
 # some information about your slides (markdown enabled)
 title: Welcome to Slidev
 info: |

@@ -16,10 +16,13 @@ The template is based on the Slidev [Getting Started](https://sli.dev/guide/) pr
 
 ## Installation and configuration
 
-The instructions below may seem detailed, but that's intentional — the Node.js ecosystem can be unintuitive for those who don’t work with it regularly.
+You can use your OS native package manager to install the dependencies, however, it is recommended to use `nvm` -- Node.js version manager.
 
-These steps have been tested on Linux. The general approach should be similar on Windows and macOS, but some adjustments may be necessary.
-If you run into major issues, feel free to open an issue — we’ll do our best to update the instructions accordingly.
+The following instructions are provided in detail, as parts of the Node.js ecosystem may not be immediately intuitive to some users."
+
+The following instructions are provided in detail, as parts of the Node.js ecosystem may not be immediately intuitive to some users. These steps have been tested on Linux only. The general approach should be similar on other operating systems with some possible adjustments.
+
+If you run into major problems installing and configuring the dependencies, feel free to open an issue — we’ll do our best to update the instructions accordingly.
 
 ### Software dependencies
 
@@ -70,10 +73,7 @@ To start the slide show:
 
 Edit the [slides.md](./slides.md) to see the changes.
 
-
 ## Learn more about Slidev
-
-Slidev has extensive [documentation](https://sli.dev/).
 
 To get started, see:
 
@@ -81,6 +81,36 @@ To get started, see:
 - [Directory Structure](https://sli.dev/custom/directory-structure)
 - [User Interface](https://sli.dev/guide/ui)
 
+This is part of extensive Slidev [documentation](https://sli.dev/).
+
+Quick tips:
+
+- **Include static files**: If you have static files, such as images or diagrams, place them in the `public/` folder. You can then reference them using `src="/image.png"`. For example, to include the image `public/myimage.jpeg` on your slide, use `src="/myimage.png"`.
+- **Embed external code blocks**: If you need to include code blocks, place files containing code in the `snippets/` folder. Then:
+  - Mark the regions to include:
+    ```ts
+    // #region snippet
+    ...
+    // #endregion snippet
+    ```
+  - Include the regions:
+    ```ts
+    <<< @/snippets/external.ts#snippet
+    ```
+- **Arrange content in slides**: You can save time arranging content in your slides using preset [layouts](https://sli.dev/guide/layout) in your slide frontmatter:
+  ```markdown
+  ---
+  layout: two-cols
+  ---
+   ```
+- **Simplify content reuse**: If you plan to reuse certain slides or sections in other Slidev presentations, you can place this content in separate markdown files inside the `pages/` folder, for example `pages/content.md`. To include them into your main `slides.md`, use:
+  ```markdown
+  ---
+  src: ./pages/content.md
+  hide: false
+  ---
+  ```
+  The parameter `hide` conveniently helps to show or hide the included slides.
 
 ## Slide syncing
 
