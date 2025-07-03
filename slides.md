@@ -6,6 +6,12 @@ theme: default
 background: https://cover.sli.dev
 # favicon, can be a local file path or URL
 favicon: '/favicons/favicon-32x32.png'
+# force color schema for the slides, can be 'auto', 'light', or 'dark'
+colorSchema: light
+# aspect ratio for the slides
+aspectRatio: 16/9
+# real width of the canvas, unit in px
+canvasWidth: 980
 # some information about your slides (markdown enabled)
 title: Welcome to Slidev
 info: |
@@ -56,6 +62,8 @@ transition: fade-out
 ---
 
 # What is Slidev?
+
+<span class="text-4xl">This text is big!</span>
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
 

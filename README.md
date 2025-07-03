@@ -83,7 +83,7 @@ To get started, see:
 
 This is part of extensive Slidev [documentation](https://sli.dev/).
 
-Quick tips:
+### Quick tips
 
 - **Include static files**: If you have static files, such as images or diagrams, place them in the `public/` folder. You can then reference them using `src="/image.png"`. For example, to include the image `public/myimage.jpeg` on your slide, use `src="/myimage.png"`.
 - **Embed external code blocks**: If you need to include code blocks, place files containing code in the `snippets/` folder. Then:
@@ -111,6 +111,11 @@ Quick tips:
   ---
   ```
   The parameter `hide` conveniently helps to show or hide the included slides.
+
+### Appearance
+
+- **Color scheme**: You can choose the color scheme by updating the parameter `colorSchema`. Its default value is `auto`, but you can force `light` or `dark`.
+- **Aspect ratio and canvas size**: To change the configuration, in the `slides.md` YAML frontmatter, uncomment and tweak the default values of `aspectRatio` and `canvasWidth`.
 
 ## Slide syncing
 
