@@ -18,8 +18,6 @@ The template is based on the Slidev [Getting Started](https://sli.dev/guide/) pr
 
 You can use your OS native package manager to install the dependencies, however, it is recommended to use `nvm` -- Node.js version manager.
 
-The following instructions are provided in detail, as parts of the Node.js ecosystem may not be immediately intuitive to some users."
-
 The following instructions are provided in detail, as parts of the Node.js ecosystem may not be immediately intuitive to some users. These steps have been tested on Linux only. The general approach should be similar on other operating systems with some possible adjustments.
 
 If you run into major problems installing and configuring the dependencies, feel free to open an issue — we’ll do our best to update the instructions accordingly.
@@ -112,10 +110,23 @@ This is part of extensive Slidev [documentation](https://sli.dev/).
   ```
   The parameter `hide` conveniently helps to show or hide the included slides.
 
-### Appearance
+## Appearance
 
-- **Color scheme**: You can choose the color scheme by updating the parameter `colorSchema`. Its default value is `auto`, but you can force `light` or `dark`.
-- **Aspect ratio and canvas size**: To change the configuration, in the `slides.md` YAML frontmatter, uncomment and tweak the default values of `aspectRatio` and `canvasWidth`.
+### Visual layout settings
+
+- **Color scheme**: To change the color scheme, in the `slides.md` YAML frontmatter, update the parameter `colorSchema`. The default value is `light`, but you can update it to `auto` or `dark`.
+- **Aspect ratio and canvas size**: To change the configuration, in the `slides.md` YAML frontmatter, update the values of `aspectRatio` and `canvasWidth`.
+
+### Update logo
+
+If the slides are for an event that has its own logo (for example, DevCon25), consider replacing the standard Espressif logo with the event-specific logo.
+
+To update the logo, follow these steps:
+
+1. Choose the logo in the `public/` folder. If your event's logo is not there, add it and consider adding it to the upstream template repo as well.
+2. In the `slides.md` YAML frontmatter, find the parameter `favicon` and add the path to the new logo.
+3. Preview the slides to make sure the logo is clearly visible and works well with the slide background color.
+
 
 ## Slide syncing
 

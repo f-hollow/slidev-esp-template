@@ -10,6 +10,6 @@
       z-index: 9999;
     "
   >
-    <img src="/logos/DevCon25_Logo_Horizontal_White.svg" alt="Espressif Logo" style="width: 100%;" />
+    <img src="/espressif-logos/Espressif_Standard_Logo_EN_Horizontal_Black.svg" alt="Espressif Logo" style="width: 100%;" />
   </footer>
 </template>

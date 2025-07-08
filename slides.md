@@ -63,8 +63,6 @@ transition: fade-out
 
 # What is Slidev?
 
-<span class="text-4xl">This text is big!</span>
-
 Slidev is a slides maker and presenter designed for developers, consist of the following features
 
 - 📝 **Text-based** - focus on the content with Markdown, and then style them later
