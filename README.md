@@ -1,6 +1,24 @@
+<!-- omit in toc -->
 # slidev-esp-template
 
 This project is a template for [Slidev](https://github.com/slidevjs/slidev) presentations recommended for use at [Espressif](https://www.espressif.com/).
+
+You can jump to:
+
+- [History](#history)
+- [Installation and configuration](#installation-and-configuration)
+  - [Software dependencies](#software-dependencies)
+  - [Template setup](#template-setup)
+- [Usage](#usage)
+- [Learn more about Slidev](#learn-more-about-slidev)
+  - [Quick tips](#quick-tips)
+- [Layout and appearance](#layout-and-appearance)
+  - [Visual layout settings](#visual-layout-settings)
+  - [Update logo](#update-logo)
+- [Slide syncing](#slide-syncing)
+  - [Troubleshooting](#troubleshooting)
+
+## History
 
 The template is based on the Slidev [Getting Started](https://sli.dev/guide/) project with the following changes:
 
@@ -9,9 +27,10 @@ The template is based on the Slidev [Getting Started](https://sli.dev/guide/) pr
   - [slidev-addon-sync](https://github.com/Smile-SA/slidev-addon-sync) -- for usage instructions, see [Slide syncing](#slide-syncing)
   - [Poll and Quiz](https://github.com/Smile-SA/slidev-component-poll) -- see a usage example in [slides.md](./slides.md#poll-and-quiz-added-in-slidev-esp-template) > *Poll and Quiz*.
 - **Layout**: Espressif logo added.
-- **Slide content**: changed or added guidelines in
-  - *Themes*
-  - *Poll and Quiz*
+- **Slide content**:
+  - Replaced Slidev Getting Started title page with a usual Espressif title page
+  - Changed guidelines in *Themes*
+  - Added a slide *Poll and Quiz* describing this plugin
 
 
 ## Installation and configuration
@@ -71,6 +90,10 @@ To start the slide show:
 
 Edit the [slides.md](./slides.md) to see the changes.
 
+Examples of Espressif presentations using Slidev:
+
+- [DevCon23 - Developing, Publishing, and Maintaining Components for ESP-IDF](https://www.youtube.com/watch?v=D86gQ4knUnc)
+
 ## Learn more about Slidev
 
 To get started, see:
@@ -83,6 +106,7 @@ This is part of extensive Slidev [documentation](https://sli.dev/).
 
 ### Quick tips
 
+- If you use VS Code, you can install [Slidev for VS Code](https://sli.dev/features/vscode-extension.html) extension to improve your experience using Slidev.
 - **Include static files**: If you have static files, such as images or diagrams, place them in the `public/` folder. You can then reference them using `src="/image.png"`. For example, to include the image `public/myimage.jpeg` on your slide, use `src="/myimage.png"`.
 - **Embed external code blocks**: If you need to include code blocks, place files containing code in the `snippets/` folder. Then:
   - Mark the regions to include:
@@ -110,7 +134,7 @@ This is part of extensive Slidev [documentation](https://sli.dev/).
   ```
   The parameter `hide` conveniently helps to show or hide the included slides.
 
-## Appearance
+## Layout and appearance
 
 ### Visual layout settings
 
