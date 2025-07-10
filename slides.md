@@ -3,7 +3,7 @@
 theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+# background: https://cover.sli.dev
 # favicon, can be a local file path or URL
 favicon: '/favicons/favicon-32x32.png'
 # force color schema for the slides, can be 'auto', 'light', or 'dark'
@@ -13,7 +13,7 @@ aspectRatio: 16/9
 # real width of the canvas, unit in px
 canvasWidth: 980
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: Espressif
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
@@ -36,26 +36,19 @@ pollSettings:
   anonymous: true
 ---
 
-# Welcome to Slidev
+# Talk title goes here
 
-Presentation slides for developers
+<span style="font-size: 2rem;">Optional subtitle</span>
 
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
-
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
+<div style="position: absolute; bottom: 2rem; left: 0; width: 100%; text-align: center;">
+  Your name<br>
+  <span style="font-size: 0.8rem; display: inline-block;">YYYY-MM-DD</span>
 </div>
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
 -->
+
 
 ---
 transition: fade-out

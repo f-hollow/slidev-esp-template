@@ -1,5 +1,5 @@
 <template>
-  <footer
+  <header
     style="
       position: fixed;
       top: 1rem;
@@ -11,5 +11,5 @@
     "
   >
     <img src="/espressif-logos/Espressif_Standard_Logo_EN_Horizontal_Black.svg" alt="Espressif Logo" style="width: 100%;" />
-  </footer>
+  </header>
 </template>
