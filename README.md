@@ -138,6 +138,7 @@ This is part of extensive Slidev [documentation](https://sli.dev/).
 
 ### Visual layout settings
 
+- **Page numbers**: To add page numbers, open the [global-bottom.vue](./global-bottom.vue) file and uncomment its contents.
 - **Color scheme**: To change the color scheme, in the `slides.md` YAML frontmatter, update the parameter `colorSchema`. The default value is `light`, but you can update it to `auto` or `dark`.
 - **Aspect ratio and canvas size**: To change the configuration, in the `slides.md` YAML frontmatter, update the values of `aspectRatio` and `canvasWidth`.
 
