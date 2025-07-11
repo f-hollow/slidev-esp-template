@@ -12,11 +12,15 @@ You can jump to:
 - [Usage](#usage)
 - [Learn more about Slidev](#learn-more-about-slidev)
   - [Quick tips](#quick-tips)
+- [Addons](#addons)
+  - [Asciinema](#asciinema)
+    - [Window resizing issue](#window-resizing-issue)
+  - [Slide syncing](#slide-syncing)
+    - [Troubleshooting](#troubleshooting)
+  - [Poll and Quiz](#poll-and-quiz)
 - [Layout and appearance](#layout-and-appearance)
   - [Visual layout settings](#visual-layout-settings)
   - [Update logo](#update-logo)
-- [Slide syncing](#slide-syncing)
-  - [Troubleshooting](#troubleshooting)
 
 ## History
 
@@ -24,12 +28,14 @@ The template is based on the Slidev [Getting Started](https://sli.dev/guide/) pr
 
 - **Theme**: instead of `seriph`, it uses the `default` theme.
 - **Addons**: it includes
-  - [slidev-addon-sync](https://github.com/Smile-SA/slidev-addon-sync) -- for usage instructions, see [Slide syncing](#slide-syncing)
-  - [Poll and Quiz](https://github.com/Smile-SA/slidev-component-poll) -- see a usage example in [slides.md](./slides.md#poll-and-quiz-added-in-slidev-esp-template) > *Poll and Quiz*.
+  - [@olzhas-adiyatov/slidev-addon-asciinema](https://www.npmjs.com/package/@olzhas-adiyatov/slidev-addon-asciinema)
+  - [slidev-addon-sync](https://github.com/Smile-SA/slidev-addon-sync)
+  - [Poll and Quiz](https://github.com/Smile-SA/slidev-component-poll)
 - **Layout**: Espressif logo added.
 - **Slide content**:
   - Replaced Slidev Getting Started title page with a usual Espressif title page
   - Changed guidelines in *Themes*
+  - Added a slide *Asciinema* describing this plugin
   - Added a slide *Poll and Quiz* describing this plugin
 
 
@@ -51,8 +57,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.nvm/nvm.sh
 # Install Node.js (LTS version includes npm)
 nvm install --lts
-# Install pnpm globally (recommended over npm for faster installs and disk efficiency)
-npm install -g pnpm
 ```
 
 
@@ -69,17 +73,19 @@ To create your presentation:
     ```
 3. Install project dependencies:
     ```sh
-    pnpm install
+    npm install
     ```
 4. (Optional but recommended) Set up your environment to use Slidev globally:
     ```sh
+    # Install pnpm globally (recommended over npm for faster installs and disk efficiency)
+    npm install -g pnpm
     # Create a global bin directory and add it to your shell's PATH
     pnpm setup
     # Restart your shell
     # Install the Slidev CLI globally
     pnpm add -g @slidev/cli
     ```
-    💡 If you prefer not to install anything globally, you can run Slidev using `pnpm exec slidev`.
+    💡 If you prefer not to install anything globally, you can run Slidev using `npm run dev`.
 
 ## Usage
 
@@ -106,7 +112,9 @@ This is part of extensive Slidev [documentation](https://sli.dev/).
 
 ### Quick tips
 
-- If you use VS Code, you can install [Slidev for VS Code](https://sli.dev/features/vscode-extension.html) extension to improve your experience using Slidev.
+The most basic and important features:
+
+- **VS Code extension**: If you use VS Code, you can install [Slidev for VS Code](https://sli.dev/features/vscode-extension.html) extension to improve your experience using Slidev.
 - **Include static files**: If you have static files, such as images or diagrams, place them in the `public/` folder. You can then reference them using `src="/image.png"`. For example, to include the image `public/myimage.jpeg` on your slide, use `src="/myimage.png"`.
 - **Embed external code blocks**: If you need to include code blocks, place files containing code in the `snippets/` folder. Then:
   - Mark the regions to include:
@@ -133,6 +141,66 @@ This is part of extensive Slidev [documentation](https://sli.dev/).
   ---
   ```
   The parameter `hide` conveniently helps to show or hide the included slides.
+- **Create tree diagrams**: Though not a Slidev feature, the tool [tree.nathanfriend.com](https://gitlab.com/nfriend/tree-online) can be very helpful in visualizing folder trees, decision trees, etc., in your slides:
+  ```markdown
+  📂 my-project/
+  ├── 📝 README.md
+  └── 📁 files/
+  ```
+
+
+## Addons
+
+### Asciinema
+
+You can create an Asciinema cast following the [Getting Started](https://docs.asciinema.org/getting-started/) guide.
+
+The asciinema player's [options](https://docs.asciinema.org/manual/player/options/) can be included via `:playerProps`:
+
+```markdowm
+<Asciinema src="casts/demo.cast" :playerProps="{speed: 2, rows: 13}"/>
+```
+
+See a usage example in [slides.md](./slides.md#asciinema) > *Asciinema*.
+
+#### Window resizing issue
+
+By default, the header of the generated `.cast` file embeds the `width` and `height` parameters:
+
+```sh
+{"version": 2, "width": 130, "height": 24, "timestamp": 1710834119, <...>}
+```
+
+When you hit the _play_ button, the presence of `width` and `height` can result in unnecessary window resizing. To avoid window resizing, remove these parameters:
+
+```sh
+{"version": 2, "timestamp": 1710834119, <...>}
+```
+
+### Slide syncing
+
+To enable slide syncing, run:
+
+```sh
+slidev --remote=<password>
+```
+
+This command will return the links for the presenter and attendees.
+
+
+#### Troubleshooting
+
+If slide syncing doesn't work, make sure that:
+
+- The dev server (`slidev --remote`) is running somewhere (usually the presenter's device).
+- The presenter is using the presenter link.
+- The presenter's and attendee's devices are connected to the same network.
+- The device's OS does not block access to the LAN due to the use of VPN clients, etc.
+
+
+### Poll and Quiz
+
+See a usage example in [slides.md](./slides.md#poll-and-quiz) > *Poll and Quiz*.
 
 ## Layout and appearance
 
@@ -151,24 +219,3 @@ To update the logo, follow these steps:
 1. Choose the logo in the `public/` folder. If your event's logo is not there, add it and consider adding it to the upstream template repo as well.
 2. In the `slides.md` YAML frontmatter, find the parameter `favicon` and add the path to the new logo.
 3. Preview the slides to make sure the logo is clearly visible and works well with the slide background color.
-
-
-## Slide syncing
-
-To enable slide syncing, run:
-
-```sh
-slidev --remote=<password>
-```
-
-This command will return the links for the presenter and attendees.
-
-
-### Troubleshooting
-
-If slide syncing doesn't work, make sure that:
-
-- The dev server (`slidev --remote`) is running somewhere (usually the presenter's device).
-- The presenter is using the presenter link.
-- The presenter's and attendee's devices are connected to the same network.
-- The device's OS does not block access to the LAN due to the use of VPN clients, etc.
