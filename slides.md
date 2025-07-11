@@ -49,7 +49,6 @@ pollSettings:
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
 -->
 
-
 ---
 transition: fade-out
 ---
@@ -635,12 +634,23 @@ sayHello()
 console.log(`vue ${version}`)
 console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
 ```
+---
+
+# Asciinema
+
+(added in slidev-esp-template)
+
+Slidev provides an addon for [Asciinema](https://github.com/Smile-SA/slidev-component-poll?tab=readme-ov-file).
+
+<Asciinema src="casts/demo.cast" :playerProps="{speed: 2, rows: 13}"/>
 
 ---
 
-# Poll and Quiz (added in slidev-esp-template)
+# Poll and Quiz
 
-Slidev provide an addon for [Poll and Quiz](https://github.com/Smile-SA/slidev-component-poll?tab=readme-ov-file).
+(added in slidev-esp-template)
+
+Slidev provides an addon for [Poll and Quiz](https://github.com/Smile-SA/slidev-component-poll).
 
 Here is a simple poll:
 

@@ -8,6 +8,7 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@olzhas-adiyatov/slidev-addon-asciinema": "^0.1.11-fork.1",
     "@slidev/cli": "^51.8.2",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
@@ -18,7 +19,8 @@
   "slidev": {
     "addons": [
       "slidev-addon-sync",
-      "slidev-component-poll"
+      "slidev-component-poll",
+      "@olzhas-adiyatov/slidev-addon-asciinema"
     ]
   }
 }
