@@ -10,6 +10,7 @@ You can jump to:
   - [Software dependencies](#software-dependencies)
   - [Template setup](#template-setup)
 - [Usage](#usage)
+  - [Examples of Slidev presentations](#examples-of-slidev-presentations)
 - [Learn more about Slidev](#learn-more-about-slidev)
   - [Quick tips](#quick-tips)
 - [Addons](#addons)
@@ -96,9 +97,19 @@ To start the slide show:
 
 Edit the [slides.md](./slides.md) to see the changes.
 
-Examples of Espressif presentations using Slidev:
+During your talk, you can:
 
-- [DevCon23 - Developing, Publishing, and Maintaining Components for ESP-IDF](https://www.youtube.com/watch?v=D86gQ4knUnc)
+- Use a websocket in the LAN by running `slidev --remote=<password> --host=0.0.0.0`<br>
+OR
+- Use a workflow to build and [Deploy Slidev to GitHub Pages](https://github.com/igrr/esb24/blob/main/.github/workflows/deploy.yml)
+
+
+### Examples of Slidev presentations
+
+- Espressif:
+  - [DevCon23 - Developing, Publishing, and Maintaining Components for ESP-IDF](https://www.youtube.com/watch?v=D86gQ4knUnc) (YouTube)
+  - [ESP-IDF and Tools Overview](https://github.com/igrr/esb24/) (GitHub)
+- [Slidev Showcases](https://sli.dev/resources/showcases)
 
 ## Learn more about Slidev
 
@@ -147,6 +158,10 @@ The most basic and important features:
   ├── 📝 README.md
   └── 📁 files/
   ```
+- **Create diagrams as code**: Slidev supports the following tools
+  - [Mermaid](https://mermaid.js.org/intro/) ([live editor](https://mermaid.live/))
+  - [PlantUML](https://plantuml.com/) ([live editor](https://editor.plantuml.com/))
+- **Use TailwindCSS for advanced formatting**: TailwindCSS is already used in Vite (upon which Slidev is built). It can help create more advanced layouts, e.g., [columns](https://tailwindcss.com/docs/columns) or [grid](https://tailwindcss.com/docs/grid-template-columns).
 
 
 ## Addons
